@@ -1,7 +1,7 @@
 // Package gorope provides easy and error-free implementation of the Rope data
 // structure. It is an alternative to []bytes, providing faster operations of
 // Rope.Insert, Rope.Delete and Rope.Concat.
-package gorope
+package pkg
 
 import (
 	"fmt"

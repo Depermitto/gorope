@@ -1,4 +1,4 @@
-package gorope
+package pkg
 
 import (
 	"os"
@@ -240,7 +240,7 @@ func BenchmarkString_Insert(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		str := string(file)
 		pos := rand.Intn(len(str))
-		str = str[:pos] + text + str[pos:]
+		_ = str[:pos] + text + str[pos:]
 	}
 }
 
