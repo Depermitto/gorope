@@ -1,7 +1,7 @@
 package main
 
 import (
-	"Rope/gorope"
+	gorope "Rope/pkg"
 	"fmt"
 )
 
