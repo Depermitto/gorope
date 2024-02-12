@@ -1,4 +1,4 @@
-package pkg
+package gorope
 
 import (
 	"os"
