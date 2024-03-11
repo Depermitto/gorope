@@ -1,6 +1,6 @@
 // Package gorope provides easy and error-free implementation of the Rope data
-// structure. It is an alternative to []bytes, providing faster operations of
-// Rope.Insert, Rope.Delete and Rope.Concat.
+// structure. It is an alternative to strings, providing faster operations of
+// inserting, deleting and concatenating.
 package gorope
 
 import (

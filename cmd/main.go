@@ -1,8 +1,8 @@
 package main
 
 import (
-	"Rope"
 	"fmt"
+	"github.com/Depermitto/gorope"
 )
 
 func main() {
