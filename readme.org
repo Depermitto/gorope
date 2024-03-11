@@ -1,4 +1,0 @@
-#+title: Rope data structure for Golang
-#+Author: Depermitto
-
-Tested (probably not for all cases though) and benchmarked implementation of the [[https:en.wikipedia.org/wiki/Rope_(data_structure)?useskin=vector][Rope]] data structure. Contains *insert*, *delete*, *at*, *contains* and *clone* methods.
