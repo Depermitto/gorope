@@ -18,7 +18,7 @@ type Rope struct {
 }
 
 // NewWith creates a new Rope out a byte array and a maximum number
-// of characters in each node. This is the preffered way of creating
+// of characters in each node. This is the preferred way of creating
 // Ropes, especially if reading from file. NewWith has complexity of O(n).
 func NewWith(value []byte, chunkSize int) *Rope {
 	if len(value) <= chunkSize {

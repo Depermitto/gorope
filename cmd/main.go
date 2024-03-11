@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	rope := gorope.New([]byte("Hello world"))
+	rope := gorope.FromString("Hello world")
 	fmt.Println(rope)
 }

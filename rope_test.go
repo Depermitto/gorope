@@ -1,14 +1,13 @@
 package gorope
 
 import (
+	"math/rand/v2"
 	"os"
 	"testing"
-
-	"golang.org/x/exp/rand"
 )
 
 const (
-	text       string = "Hello to this beaufitul world!"
+	text       string = "Hello to this beautiful world!"
 	panTadeusz string = "pan_tadeusz.txt"
 	chunk      int    = 15
 )
@@ -183,8 +182,7 @@ func TestRope_Insert(t *testing.T) {
 
 func TestRope_Delete(t *testing.T) {
 	rope := FromStringWith(text, chunk)
-	ns := []int{1, 2, 3}
-	for _, n := range ns {
+	for n := 1; n <= 3; n++ {
 		for pos := range text {
 			got := rope.CloneWith(chunk)
 			want := text[:pos] + text[min(pos+n, len(text)):]
@@ -210,7 +208,7 @@ func BenchmarkString_At(b *testing.B) {
 	length := len(str)
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		pos := rand.Intn(length)
+		pos := rand.IntN(length)
 		_ = str[pos]
 	}
 }
@@ -225,7 +223,7 @@ func BenchmarkRope_At(b *testing.B) {
 	length := rope.Len()
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		pos := rand.Intn(length)
+		pos := rand.IntN(length)
 		_, _ = rope.At(pos)
 	}
 }
@@ -239,7 +237,7 @@ func BenchmarkString_Insert(b *testing.B) {
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		str := string(file)
-		pos := rand.Intn(len(str))
+		pos := rand.IntN(len(str))
 		_ = str[:pos] + text + str[pos:]
 	}
 }
@@ -253,7 +251,7 @@ func BenchmarkRope_Insert(b *testing.B) {
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		rope := New(file)
-		pos := rand.Intn(rope.Len())
+		pos := rand.IntN(rope.Len())
 		_ = rope.Insert(pos, []byte(text))
 	}
 }
